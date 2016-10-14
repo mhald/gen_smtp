@@ -49,48 +49,6 @@
                               {packet, line},
                               {ssl_imp, new}]).
 
-get_tls_versions() ->
-    application:get_env(email_gateway, tls_versions, ['tlsv1', 'tlsv1.1', 'tlsv1.2' ]).
-
-get_ciphers() ->
-    application:get_env(email_gateway, ciphers, [
-          {ecdhe_ecdsa,aes_256_cbc,sha384},
-          {ecdhe_rsa,aes_256_cbc,sha384},
-          {ecdh_ecdsa,aes_256_cbc,sha384},
-          {ecdh_rsa,aes_256_cbc,sha384},
-          {dhe_rsa,aes_256_cbc,sha256},
-          {dhe_dss,aes_256_cbc,sha256},
-          {rsa,aes_256_cbc,sha256},
-          {ecdhe_ecdsa,aes_128_cbc,sha256},
-          {ecdhe_rsa,aes_128_cbc,sha256},
-          {ecdh_ecdsa,aes_128_cbc,sha256},
-          {ecdh_rsa,aes_128_cbc,sha256},
-          {dhe_rsa,aes_128_cbc,sha256},
-          {dhe_dss,aes_128_cbc,sha256},
-          {rsa,aes_128_cbc,sha256},
-          {ecdhe_ecdsa,aes_256_cbc,sha},
-          {ecdhe_rsa,aes_256_cbc,sha},
-          {dhe_rsa,aes_256_cbc,sha},
-          {dhe_dss,aes_256_cbc,sha},
-          {ecdh_ecdsa,aes_256_cbc,sha},
-          {ecdh_rsa,aes_256_cbc,sha},
-          {rsa,aes_256_cbc,sha},
-          {ecdhe_ecdsa,'3des_ede_cbc',sha},
-          {ecdhe_rsa,'3des_ede_cbc',sha},
-          {dhe_rsa,'3des_ede_cbc',sha},
-          {dhe_dss,'3des_ede_cbc',sha},
-          {ecdh_ecdsa,'3des_ede_cbc',sha},
-          {ecdh_rsa,'3des_ede_cbc',sha},
-          {rsa,'3des_ede_cbc',sha},
-          {ecdhe_ecdsa,aes_128_cbc,sha},
-          {ecdhe_rsa,aes_128_cbc,sha},
-          {dhe_rsa,aes_128_cbc,sha},
-          {dhe_dss,aes_128_cbc,sha},
-          {ecdh_ecdsa,aes_128_cbc,sha},
-          {ecdh_rsa,aes_128_cbc,sha},
-          {rsa,aes_128_cbc,sha}
-          ]).
-
 -ifdef(TEST).
 -include_lib("eunit/include/eunit.hrl").
 -endif.
@@ -707,3 +665,46 @@ ssl_upgrade_test_() ->
 		}
 	].
 -endif.
+
+get_tls_versions() ->
+	application:get_env(email_gateway, tls_versions, ['tlsv1', 'tlsv1.1', 'tlsv1.2' ]).
+
+get_ciphers() ->
+	application:get_env(email_gateway, ciphers, [
+		{ecdhe_ecdsa,aes_256_cbc,sha384},
+		{ecdhe_rsa,aes_256_cbc,sha384},
+		{ecdh_ecdsa,aes_256_cbc,sha384},
+		{ecdh_rsa,aes_256_cbc,sha384},
+		{dhe_rsa,aes_256_cbc,sha256},
+		{dhe_dss,aes_256_cbc,sha256},
+		{rsa,aes_256_cbc,sha256},
+		{ecdhe_ecdsa,aes_128_cbc,sha256},
+		{ecdhe_rsa,aes_128_cbc,sha256},
+		{ecdh_ecdsa,aes_128_cbc,sha256},
+		{ecdh_rsa,aes_128_cbc,sha256},
+		{dhe_rsa,aes_128_cbc,sha256},
+		{dhe_dss,aes_128_cbc,sha256},
+		{rsa,aes_128_cbc,sha256},
+		{ecdhe_ecdsa,aes_256_cbc,sha},
+		{ecdhe_rsa,aes_256_cbc,sha},
+		{dhe_rsa,aes_256_cbc,sha},
+		{dhe_dss,aes_256_cbc,sha},
+		{ecdh_ecdsa,aes_256_cbc,sha},
+		{ecdh_rsa,aes_256_cbc,sha},
+		{rsa,aes_256_cbc,sha},
+		{ecdhe_ecdsa,'3des_ede_cbc',sha},
+		{ecdhe_rsa,'3des_ede_cbc',sha},
+		{dhe_rsa,'3des_ede_cbc',sha},
+		{dhe_dss,'3des_ede_cbc',sha},
+		{ecdh_ecdsa,'3des_ede_cbc',sha},
+		{ecdh_rsa,'3des_ede_cbc',sha},
+		{rsa,'3des_ede_cbc',sha},
+		{ecdhe_ecdsa,aes_128_cbc,sha},
+		{ecdhe_rsa,aes_128_cbc,sha},
+		{dhe_rsa,aes_128_cbc,sha},
+		{dhe_dss,aes_128_cbc,sha},
+		{ecdh_ecdsa,aes_128_cbc,sha},
+		{ecdh_rsa,aes_128_cbc,sha},
+		{rsa,aes_128_cbc,sha}
+	]).
+
